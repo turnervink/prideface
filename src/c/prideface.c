@@ -1,5 +1,7 @@
 #include <pebble.h>
+#include "prideface.h"
 #include "messaging/messaging.h"
+#include "config/settings.h"
 
 static Window *main_window;
 static Layer *flag;
@@ -30,8 +32,12 @@ static void draw_flag(int segments, int colors[], GContext *ctx) {
 
 static void flag_update_proc(Layer *layer, GContext *ctx) {
 
-  draw_flag(flag_segments[1], flags[1], ctx);
+  draw_flag(flag_segments[current_flag], flags[current_flag], ctx);
 
+}
+
+void update_flag() {
+  layer_mark_dirty(flag);
 }
 
 static void main_window_load(Window *window) {
@@ -59,6 +65,7 @@ static void init() {
   });
 
   init_messaging();
+  load_settings();
 
   window_stack_push(main_window, true);
   // tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
