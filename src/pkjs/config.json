@@ -1,0 +1,22 @@
+[
+  {
+      "type": "select",
+      "messageKey": "CfgKeyFlag",
+      "label": "Flag:",
+      "defaultValue": "0",
+      "options": [
+        {
+          "label": "Pansexual",
+          "value": "0"
+        },
+        {
+          "label": "Gay",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "submit",
+      "defaultValue": "Save"
+    }
+]
