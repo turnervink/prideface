@@ -4,7 +4,7 @@
 #include "config/settings.h"
 
 static Window *main_window;
-static Layer *flag;
+static Layer *flag, *time_band;
 
 extern int *flags[];
 extern int flag_segments[];
@@ -12,7 +12,7 @@ extern int flag_segments[];
 static void draw_flag(int segments, int colors[], GContext *ctx) {
 
   GRect bounds = layer_get_bounds(window_get_root_layer(main_window));
-  int segment_height = bounds.size.h / segments;
+  int segment_height = bounds.size.h / segments + (bounds.size.h % segments != 0);
   int segment_width = bounds.size.w;
 
   for (int i = 0; i < segments; i++) {
@@ -31,13 +31,27 @@ static void draw_flag(int segments, int colors[], GContext *ctx) {
 }
 
 static void flag_update_proc(Layer *layer, GContext *ctx) {
-
   draw_flag(flag_segments[current_flag], flags[current_flag], ctx);
-
 }
 
 void update_flag() {
   layer_mark_dirty(flag);
+}
+
+static void time_band_update_proc(Layer *layer, GContext *ctx) {
+  GRect bounds = layer_get_bounds(window_get_root_layer(main_window));
+  int band_x = (bounds.size.w / 2) - 38;
+  int band_y = 0;
+  int band_w = 76;
+  int band_h = bounds.size.h;
+  GRect band = GRect(band_x, band_y, band_w, band_h);
+  GRect band_stroke = GRect(band_x, band_y - 2, band_w, band_h + 4);
+
+  graphics_context_set_fill_color(ctx, GColorBlack);
+  graphics_context_set_stroke_color(ctx, GColorWhite);
+  graphics_context_set_stroke_width(ctx, 3);
+  graphics_fill_rect(ctx, band, 0, GCornerNone);
+  graphics_draw_rect(ctx, band_stroke);
 }
 
 static void main_window_load(Window *window) {
@@ -47,7 +61,11 @@ static void main_window_load(Window *window) {
   flag = layer_create(bounds);
   layer_set_update_proc(flag, flag_update_proc);
 
+  time_band = layer_create(bounds);
+  layer_set_update_proc(time_band, time_band_update_proc);
+
   layer_add_child(window_get_root_layer(window), flag);
+  layer_add_child(window_get_root_layer(window), time_band);
 
 }
 

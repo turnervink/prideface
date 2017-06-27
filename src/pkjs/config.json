@@ -6,12 +6,32 @@
       "defaultValue": "0",
       "options": [
         {
+          "label": "Gay",
+          "value": "1"
+        },
+        {
+          "label": "Bisexual",
+          "value": "3"
+        },
+        {
+          "label": "Transgender",
+          "value": "4"
+        },
+        {
           "label": "Pansexual",
           "value": "0"
         },
         {
-          "label": "Gay",
-          "value": "1"
+          "label": "Asexual",
+          "value": "2"
+        },
+        {
+          "label": "Polysexual",
+          "value": "5"
+        },
+        {
+          "label": "Nonbinary",
+          "value": "6"
         }
       ]
     },
