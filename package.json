@@ -29,13 +29,7 @@
       "CfgKeyFlag"
     ],
     "resources": {
-      "media": [
-        {
-          "file": "fonts/gilbert_bold.otf",
-          "name": "FONT_GILBERT_48",
-          "type": "font"
-        }
-      ]
+      "media": []
     }
   }
 }
