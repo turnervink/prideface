@@ -32,12 +32,7 @@
       "media": [
         {
           "file": "fonts/gilbert_bold.otf",
-          "name": "FONT_GILBERT_46",
-          "type": "font"
-        },
-        {
-          "file": "fonts/gilbert_bold.otf",
-          "name": "FONT_GILBERT_50",
+          "name": "FONT_GILBERT_48",
           "type": "font"
         }
       ]
