@@ -28,7 +28,18 @@
       "CfgKeyFlag"
     ],
     "resources": {
-      "media": []
+      "media": [
+        {
+          "file": "fonts/gilbert_bold.otf",
+          "name": "FONT_GILBERT_46",
+          "type": "font"
+        },
+        {
+          "file": "fonts/gilbert_bold.otf",
+          "name": "FONT_GILBERT_50",
+          "type": "font"
+        }
+      ]
     }
   }
 }
