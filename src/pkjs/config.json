@@ -1,42 +1,62 @@
 [
   {
-      "type": "select",
-      "messageKey": "CfgKeyFlag",
-      "label": "Flag:",
-      "defaultValue": "0",
-      "options": [
-        {
-          "label": "Gay",
-          "value": "1"
-        },
-        {
-          "label": "Bisexual",
-          "value": "3"
-        },
-        {
-          "label": "Transgender",
-          "value": "4"
-        },
-        {
-          "label": "Pansexual",
-          "value": "0"
-        },
-        {
-          "label": "Asexual",
-          "value": "2"
-        },
-        {
-          "label": "Polysexual",
-          "value": "5"
-        },
-        {
-          "label": "Nonbinary",
-          "value": "6"
-        }
+    "type": "section",
+    "items": [
+      {
+        "type": "heading",
+        "size": 1,
+        "id": "main-heading",
+        "defaultValue": "<p style='text-align:center;'>Pride</p>"
+      },
+      {
+        "type": "text",
+        "defaultValue": "<p style='text-align:center;'>1.0</p>"
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "items": [
+      {
+        "type": "select",
+        "messageKey": "CfgKeyFlag",
+        "label": "Flag:",
+        "defaultValue": "0",
+        "options": [
+          {
+            "label": "Gay",
+            "value": "1"
+          },
+          {
+            "label": "Bisexual",
+            "value": "3"
+          },
+          {
+            "label": "Transgender",
+            "value": "4"
+          },
+          {
+            "label": "Pansexual",
+            "value": "0"
+          },
+          {
+            "label": "Asexual",
+            "value": "2"
+          },
+          {
+            "label": "Polysexual",
+            "value": "5"
+          },
+          {
+            "label": "Nonbinary",
+            "value": "6"
+          }
       ]
-    },
-    {
-      "type": "submit",
-      "defaultValue": "Save"
-    }
+      }
+    ]
+  },
+  {
+    "type": "submit",
+    "defaultValue": "Save"
+  }
 ]

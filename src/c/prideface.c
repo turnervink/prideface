@@ -35,7 +35,6 @@ static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 }
 
 static void draw_flag(int segments, int colors[], GContext *ctx) {
-
   GRect bounds = layer_get_bounds(window_get_root_layer(main_window));
   int segment_height = bounds.size.h / segments + (bounds.size.h % segments != 0);
   int segment_width = bounds.size.w;
@@ -49,7 +48,6 @@ static void draw_flag(int segments, int colors[], GContext *ctx) {
     graphics_fill_rect(ctx, current_rect, 0, GCornerNone);
 
   }
-
 }
 
 static void flag_update_proc(Layer *layer, GContext *ctx) {
@@ -98,12 +96,9 @@ static void main_window_load(Window *window) {
   size_text_layers();
 }
 
-static void main_window_unload(Window *window) {
-
-}
+static void main_window_unload(Window *window) {}
 
 static void init() {
-
   main_window = window_create();
 
   window_set_window_handlers(main_window, (WindowHandlers) {
@@ -116,20 +111,15 @@ static void init() {
 
   window_stack_push(main_window, true);
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
-
 }
 
 static void deinit() {
-
   window_destroy(main_window);
   tick_timer_service_unsubscribe();
-
 }
 
 int main(void) {
-
   init();
   app_event_loop();
   deinit();
-
 }

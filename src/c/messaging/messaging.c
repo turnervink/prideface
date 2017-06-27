@@ -23,7 +23,6 @@ static void inbox_received_handler(DictionaryIterator *iter, void *ctx) {
   }
 
   save_settings();
-
 }
 
 void inbox_failed_handler(AppMessageResult reason, void *context) {

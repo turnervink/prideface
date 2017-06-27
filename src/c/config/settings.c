@@ -4,7 +4,6 @@
 #define STORED_SETTINGS 5555
 
 void save_settings() {
-
   persist_write_bool(STORED_SETTINGS, true);
 
   for (int i = 0; i < CfgKeyCount; i++) {
@@ -14,11 +13,9 @@ void save_settings() {
     }
 
   }
-
 }
 
 void load_settings() {
-
   if (persist_exists(STORED_SETTINGS)) {
 
     // Load stored settings
@@ -33,5 +30,4 @@ void load_settings() {
   } else {
     current_flag = 1;
   }
-
 }
