@@ -1,4 +1,5 @@
 #include <pebble.h>
+#include "../prideface.h"
 #include "messaging.h"
 #include "../config/settings.h"
 
@@ -14,6 +15,7 @@ static void inbox_received_handler(DictionaryIterator *iter, void *ctx) {
     if (true_key == CfgKeyFlag) {
       current_flag = atoi(t->value->cstring);
       APP_LOG(APP_LOG_LEVEL_INFO, "Flag is %d", current_flag);
+      update_flag();
     }
 
     t = dict_read_next(iter);
@@ -21,8 +23,6 @@ static void inbox_received_handler(DictionaryIterator *iter, void *ctx) {
   }
 
   save_settings();
-  // Update flag layer here
-
 }
 
 void inbox_failed_handler(AppMessageResult reason, void *context) {

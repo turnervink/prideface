@@ -1,24 +1,23 @@
 {
-  "name": "prideface",
-  "author": "MakeAwesomeHappen",
+  "name": "Pride",
+  "author": "Turner Vink",
   "version": "1.0.0",
   "keywords": [
     "pebble-app"
   ],
   "private": true,
   "dependencies": {
-    "pebble-clay": "^1.0.4"
+    "pebble-clay": "^1.0.4",
+    "pebble-effect-layer": "^1.1.4"
   },
   "pebble": {
-    "displayName": "prideface",
+    "displayName": "Pride",
     "uuid": "3776db3e-d10a-4c8c-8c31-c81d82e26232",
     "sdkVersion": "3",
     "enableMultiJS": true,
     "targetPlatforms": [
-      "aplite",
       "basalt",
-      "chalk",
-      "diorite"
+      "chalk"
     ],
     "capabilities": [
       "configurable"
